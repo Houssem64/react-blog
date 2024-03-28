@@ -2,10 +2,10 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <footer className="bg-white">
+    <footer className="bg-gradient-to-r from-[#020213] to-[#091c38]">
       <div className="mx-auto max-w-screen-xl px-4 pb-8 pt-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-md">
-          <strong className="block text-center text-xl font-bold text-gray-900 sm:text-3xl">
+          <strong className="block text-center text-xl font-bold text-white sm:text-3xl">
             Want us to email you with the latest blockbuster news?
           </strong>
 
@@ -40,7 +40,7 @@ export default function Footer() {
 
             <div className="mt-6 flex justify-center gap-4 lg:justify-start">
               <a
-                className="text-gray-700 transition hover:text-gray-700/75"
+                className="text-gray-700 transition hover:text-white"
                 href="#"
                 target="_blank"
                 rel="noreferrer"
@@ -48,7 +48,7 @@ export default function Footer() {
                 <span className="sr-only"> Facebook </span>
 
                 <svg
-                  className="h-6 w-6"
+                  className="h-8 w-8"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                   aria-hidden="true"
@@ -62,7 +62,7 @@ export default function Footer() {
               </a>
 
               <a
-                className="text-gray-700 transition hover:text-gray-700/75"
+                className="text-gray-700 transition hover:text-white"
                 href="#"
                 target="_blank"
                 rel="noreferrer"
@@ -70,7 +70,7 @@ export default function Footer() {
                 <span className="sr-only"> Instagram </span>
 
                 <svg
-                  className="h-6 w-6"
+                  className="h-8 w-8"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                   aria-hidden="true"
@@ -84,7 +84,7 @@ export default function Footer() {
               </a>
 
               <a
-                className="text-gray-700 transition hover:text-gray-700/75"
+                className="text-gray-700 transition hover:text-white"
                 href="#"
                 target="_blank"
                 rel="noreferrer"
@@ -92,7 +92,7 @@ export default function Footer() {
                 <span className="sr-only"> Twitter </span>
 
                 <svg
-                  className="h-6 w-6"
+                  className="h-8 w-8"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                   aria-hidden="true"
@@ -102,7 +102,7 @@ export default function Footer() {
               </a>
 
               <a
-                className="text-gray-700 transition hover:text-gray-700/75"
+                className="text-gray-700 transition hover:text-white"
                 href="#"
                 target="_blank"
                 rel="noreferrer"
@@ -110,7 +110,7 @@ export default function Footer() {
                 <span className="sr-only"> GitHub </span>
 
                 <svg
-                  className="h-6 w-6"
+                  className="h-8 w-8"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                   aria-hidden="true"
@@ -124,7 +124,7 @@ export default function Footer() {
               </a>
 
               <a
-                className="text-gray-700 transition hover:text-gray-700/75"
+                className="text-gray-700 transition hover:text-white"
                 href="#"
                 target="_blank"
                 rel="noreferrer"
@@ -132,7 +132,7 @@ export default function Footer() {
                 <span className="sr-only"> Dribbble </span>
 
                 <svg
-                  className="h-6 w-6"
+                  className="h-8 w-8"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                   aria-hidden="true"
@@ -149,12 +149,12 @@ export default function Footer() {
 
           <div className="grid grid-cols-1 gap-8 text-center lg:grid-cols-3 lg:text-left">
             <div>
-              <strong className="font-medium text-gray-900"> Services </strong>
+              <strong className="font-medium text-gray-400"> Services </strong>
 
               <ul className="mt-6 space-y-1">
                 <li>
                   <a
-                    className="text-gray-700 transition hover:text-gray-700/75"
+                    className="text-gray-400 transition hover:text-gray-700/75"
                     href="#"
                   >
                     {" "}
@@ -164,7 +164,7 @@ export default function Footer() {
 
                 <li>
                   <a
-                    className="text-gray-700 transition hover:text-gray-700/75"
+                    className="text-gray-400 transition hover:text-gray-700/75"
                     href="#"
                   >
                     Graphic Design
@@ -173,7 +173,7 @@ export default function Footer() {
 
                 <li>
                   <a
-                    className="text-gray-700 transition hover:text-gray-700/75"
+                    className="text-gray-400 transition hover:text-gray-700/75"
                     href="#"
                   >
                     App Development
@@ -182,7 +182,7 @@ export default function Footer() {
 
                 <li>
                   <a
-                    className="text-gray-700 transition hover:text-gray-700/75"
+                    className="text-gray-400 transition hover:text-gray-700/75"
                     href="#"
                   >
                     Web Development
@@ -192,12 +192,12 @@ export default function Footer() {
             </div>
 
             <div>
-              <strong className="font-medium text-gray-900"> About </strong>
+              <strong className="font-medium text-gray-400"> About </strong>
 
               <ul className="mt-6 space-y-1">
                 <li>
                   <a
-                    className="text-gray-700 transition hover:text-gray-700/75"
+                    className="text-gray-400 transition hover:text-gray-700/75"
                     href="#"
                   >
                     {" "}
@@ -207,7 +207,7 @@ export default function Footer() {
 
                 <li>
                   <a
-                    className="text-gray-700 transition hover:text-gray-700/75"
+                    className="text-gray-400 transition hover:text-gray-700/75"
                     href="#"
                   >
                     {" "}
@@ -217,7 +217,7 @@ export default function Footer() {
 
                 <li>
                   <a
-                    className="text-gray-700 transition hover:text-gray-700/75"
+                    className="text-gray-400 transition hover:text-gray-700/75"
                     href="#"
                   >
                     {" "}
@@ -227,7 +227,7 @@ export default function Footer() {
 
                 <li>
                   <a
-                    className="text-gray-700 transition hover:text-gray-700/75"
+                    className="text-gray-400 transition hover:text-gray-700/75"
                     href="#"
                   >
                     {" "}
@@ -238,12 +238,12 @@ export default function Footer() {
             </div>
 
             <div>
-              <strong className="font-medium text-gray-900"> Support </strong>
+              <strong className="font-medium text-gray-400"> Support </strong>
 
               <ul className="mt-6 space-y-1">
                 <li>
                   <a
-                    className="text-gray-700 transition hover:text-gray-700/75"
+                    className="text-gray-400 transition hover:text-gray-700/75"
                     href="#"
                   >
                     {" "}
@@ -253,21 +253,11 @@ export default function Footer() {
 
                 <li>
                   <a
-                    className="text-gray-700 transition hover:text-gray-700/75"
+                    className="text-gray-400 transition hover:text-gray-700/75"
                     href="#"
                   >
                     {" "}
                     Contact{" "}
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    className="text-gray-700 transition hover:text-gray-700/75"
-                    href="#"
-                  >
-                    {" "}
-                    Live Chat{" "}
                   </a>
                 </li>
               </ul>
@@ -277,21 +267,15 @@ export default function Footer() {
 
         <div className="mt-16 border-t border-gray-100 pt-8">
           <p className="text-center text-xs/relaxed text-gray-500">
-            © Company 2022. All rights reserved.
+            © 2024. All rights reserved.
             <br />
             Created with
-            <a
-              href="#"
-              className="text-gray-700 underline transition hover:text-gray-700/75"
-            >
-              Laravel
+            <a href="#" className="text-white mx-1   transition ">
+              React
             </a>
             and
-            <a
-              href="#"
-              className="text-gray-700 underline transition hover:text-gray-700/75"
-            >
-              Laravel Livewire
+            <a href="#" className="text-white mx-1 transition ">
+              TailwindCSS
             </a>
             .
           </p>
