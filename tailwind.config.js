@@ -1,13 +1,7 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: ["./index.html", "./src/**/*.{js,,html,ts,jsx,tsx}"],
+export default {
+  content: ["./src/**/*.{js,jsx,ts,tsx,html}", "./index.html"],
   theme: {
-    colors: {
-      customGradient: {
-        start: "#020213",
-        end: "#091c38",
-      },
-    },
     extend: {},
   },
   plugins: [],
