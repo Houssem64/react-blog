@@ -3,6 +3,7 @@ import "./index.css";
 import ReactDOM from "react";
 import Home from "./pages/Home";
 import Article from "./pages/Article";
+import { Analytics } from "@vercel/analytics/react";
 
 const Page = () => {
   return (
@@ -14,9 +15,12 @@ const Page = () => {
 };
 function App() {
   return (
-    <div className="bg-gradient-to-r from-[#020213] to-[#091c38] -mt-2">
-      <Page />
-    </div>
+    <>
+      <Analytics />
+      <div className="bg-gradient-to-r from-[#020213] to-[#091c38] -mt-2">
+        <Page />
+      </div>
+    </>
   );
 }
 
