@@ -1,5 +1,5 @@
 import React from "react";
-
+import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { GraphQLClient, gql } from "graphql-request";
 
@@ -25,7 +25,7 @@ const blogDataQuery = gql`
   }
 `;
 
-const LatestPost = ({ title, image, date, description }) => {
+const LatestPost = ({ title, image, date, description, slug }) => {
   return (
     <>
       <section className="bg-black-950  text-white" element-id="268">
@@ -37,7 +37,7 @@ const LatestPost = ({ title, image, date, description }) => {
 
           <a
             rel="noopener noreferrer"
-            href="#"
+            href={`/posts/${slug}`}
             className=" block hover:shadow-lg hover:shadow-white hover:translate-x-3 hover:-translate-y-3 transition max-w-sm gap-3 mx-auto sm:max-w-full group hover:no-underline focus:no-underline lg:grid lg:grid-cols-12 bg-black-50"
             element-id="266"
           >
@@ -84,6 +84,7 @@ const LatestPostCard = () => {
         description={post.description}
         image={post.image.url}
         date={post.date}
+        slug={post.slug}
       />
     </div>
   ) : null;
