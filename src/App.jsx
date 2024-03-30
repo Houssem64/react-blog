@@ -8,11 +8,13 @@ import { Analytics } from "@vercel/analytics/react";
 const Page = () => {
   return (
     <Routes>
-      <Route exact path="/" Component={Home}></Route>
-      <Route exact path="/article" Component={Article} />
+      <Route exact path="/" element={<Home />} />
+      <Route exact path="/article" element={<Article />} />
+      <Route exact path="/posts/:slug" element={<Article />} />
     </Routes>
   );
 };
+
 function App() {
   return (
     <>
