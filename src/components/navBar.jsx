@@ -7,13 +7,13 @@ const navigation = [
   { name: "Home", href: "/", current: true },
   {
     name: "Programming",
-    href: "/article",
+    href: "/programming",
     current: false,
   },
-  { name: "VMware", href: "#", current: false },
-  { name: "Networking", href: "#", current: false },
-  { name: "CyberSecurity", href: "#", current: false },
-  { name: "DevOps", href: "#", current: false },
+  { name: "VMware", href: "/vmware", current: false },
+  { name: "Networking", href: "/networking", current: false },
+  { name: "CyberSecurity", href: "/CyberSecurity", current: false },
+  { name: "DevOps", href: "/DevOps", current: false },
 ];
 
 function classNames(...classes) {
@@ -52,10 +52,9 @@ export default function NavBar() {
                 </div>
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
-                    {navigation.map((item, index) => (
-                      <Link to={item.href}>
+                    {navigation.map((item) => (
+                      <Link to={item.href} key={item.name}>
                         <div
-                          key={index}
                           className={classNames(
                             item.current
                               ? "bg-gray-900 text-white"
@@ -104,9 +103,9 @@ export default function NavBar() {
 
           <Disclosure.Panel className="sm:hidden">
             <div className="space-y-1 px-2 pb-3 pt-2">
-              {navigation.map((item, index) => (
+              {navigation.map((item) => (
                 <Disclosure.Button
-                  key={index}
+                  key={item.name}
                   as="a"
                   href={item.href}
                   className={classNames(

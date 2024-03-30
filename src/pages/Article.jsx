@@ -3,6 +3,15 @@ import { GraphQLClient, gql } from "graphql-request";
 import { useParams } from "react-router-dom";
 import parse from "html-react-parser";
 import { RichText } from "@graphcms/rich-text-react-renderer";
+const content = {
+  type: "document",
+  children: [
+    {
+      type: "paragraph",
+      children: [{ text: "This is a simple example of a rich text field." }],
+    },
+  ],
+};
 
 const Article = ({ title, date, description, image, body }) => {
   return (
@@ -28,7 +37,7 @@ const Article = ({ title, date, description, image, body }) => {
           >
             <p className="text-2xl md:text-3xl mb-5">{description} </p>
 
-            {/*             <RichText
+            <RichText
               className="py-6 text-md text-black "
               content={content}
               renderers={{
@@ -37,8 +46,7 @@ const Article = ({ title, date, description, image, body }) => {
                 ),
                 bold: ({ children }) => <strong>{children}</strong>,
               }}
-            /> */}
-            <p>{parse(body)}</p>
+            />
           </div>
 
           <div className="flex w-full items-center font-sans p-8 md:p-24"></div>

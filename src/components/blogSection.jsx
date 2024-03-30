@@ -78,9 +78,9 @@ const BlogCardSection = () => {
           element-id="260"
         >
           {posts &&
-            posts.map((blog, id) => (
+            posts.map((blog) => (
               <BlogCards
-                key={id}
+                key={blog.title}
                 title={blog.title}
                 description={blog.description}
                 image={blog.image.url}
