@@ -1,6 +1,4 @@
-import React from "react";
-import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { GraphQLClient, gql } from "graphql-request";
 
 const graphcms = new GraphQLClient(
@@ -27,51 +25,44 @@ const blogDataQuery = gql`
 
 const LatestPost = ({ title, image, date, description, slug }) => {
   return (
-    <>
-      <section className="bg-black-950  text-white" element-id="268">
-        <div
-          className="container  max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12"
-          element-id="267"
-        >
-          <h1 className="font-extrabold text-4xl ml-10">Latest Post</h1>
+    <section className="bg-black-950  text-white">
+      <div className="container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12">
+        <h1 className="font-extrabold text-4xl ml-10">Latest Post</h1>
 
-          <a
-            rel="noopener noreferrer"
-            href={`/posts/${slug}`}
-            className=" block hover:shadow-lg hover:shadow-white hover:translate-x-3 hover:-translate-y-3 transition max-w-sm gap-3 mx-auto sm:max-w-full group hover:no-underline focus:no-underline lg:grid lg:grid-cols-12 bg-black-50"
-            element-id="266"
-          >
-            <img
-              src={image}
-              alt={title}
-              className="rounded-xl object-cover w-full h-64  sm:h-96 lg:col-span-7 bg-black-950"
-              element-id="265"
-            />
-            <div className="p-6  space-y-2 lg:col-span-5" element-id="264">
-              <h3
-                className="text-2xl font-semibold sm:text-4xl group-hover:underline group-focus:underline"
-                element-id="263"
-              >
-                {title}
-              </h3>
-              <span className="text-xs text-white" element-id="262">
-                {date}
-              </span>
-              <p element-id="261">{description}</p>
-            </div>
-          </a>
-        </div>
-      </section>
-    </>
+        <a
+          rel="noopener noreferrer"
+          href={`/posts/${slug}`}
+          className="block hover:shadow-lg hover:shadow-white hover:translate-x-3 hover:-translate-y-3 transition max-w-sm gap-3 mx-auto sm:max-w-full group hover:no-underline focus:no-underline lg:grid lg:grid-cols-12 bg-black-50"
+        >
+          <img
+            src={image}
+            alt={title}
+            className="rounded-xl object-cover w-full h-64  sm:h-96 lg:col-span-7 bg-black-950"
+          />
+          <div className="p-6  space-y-2 lg:col-span-5">
+            <h3 className="text-2xl font-semibold sm:text-4xl group-hover:underline group-focus:underline">
+              {title}
+            </h3>
+            <span className="text-xs text-white">{date}</span>
+            <p>{description}</p>
+          </div>
+        </a>
+      </div>
+    </section>
   );
 };
+
 const LatestPostCard = () => {
   const [post, setPost] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
-      const { posts } = await graphcms.request(blogDataQuery);
-      setPost(posts[0]);
+      try {
+        const { posts } = await graphcms.request(blogDataQuery);
+        setPost(posts[0]);
+      } catch (error) {
+        console.error("Error fetching latest post:", error);
+      }
     };
 
     fetchData();
