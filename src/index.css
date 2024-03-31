@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.body-content > h3 {
+  font-size: 50px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  text-wrap: nowrap;
+}
+.body-content > p {
+  font-size: large;
+  font-family: oswald;
+
+  margin: 20px;
+  padding: 5px;
+}
+.body-content > img {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 3%;
+}

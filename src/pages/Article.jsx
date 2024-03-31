@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { GraphQLClient, gql } from "graphql-request";
-import parse from "html-react-parser";
 
 const graphcms = new GraphQLClient(
   "https://api-eu-central-1-shared-euc1-02.hygraph.com/v2/cluczoi5o0m1007vxfauiuile/master"
@@ -34,7 +33,7 @@ const Articles = () => {
         const { post } = await graphcms.request(query, { slug });
         setPost(post);
       } catch (error) {
-        console.error("Error fetching post:", error);
+        res.error("Error fetching post:", error).status(500);
       }
     };
 
@@ -67,7 +66,10 @@ const Articles = () => {
                 style={{ fontFamily: "Georgia, serif" }}
               >
                 <p className="text-2xl md:text-3xl mb-5">{post.description}</p>
-                {parse(post.body.html)}
+                <div
+                  className="text-black body-content"
+                  dangerouslySetInnerHTML={{ __html: post.body.html }}
+                ></div>
               </div>
               <div className="flex w-full items-center font-sans p-8 md:p-24"></div>
             </div>
