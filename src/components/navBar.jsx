@@ -29,7 +29,7 @@ export default function NavBar() {
       `;
 
       const data = await graphQLClient.request(query);
-
+      console.log(data.navLinks);
       setData(data.navLinks);
     };
 
