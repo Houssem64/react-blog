@@ -29,7 +29,7 @@ export default function NavBar() {
       `;
 
       const data = await graphQLClient.request(query);
-      console.log(data.navLinks);
+
       setData(data.navLinks);
     };
 
@@ -88,6 +88,12 @@ export default function NavBar() {
                         </div>
                       </Link>
                     ))}
+                    <Link
+                      to="/about"
+                      className="text-white hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                    >
+                      About
+                    </Link>
                   </div>
                 </div>
               </div>

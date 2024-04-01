@@ -39,6 +39,7 @@ const Articles = () => {
 
     fetchPost();
   }, [slug]);
+  console.log(post);
 
   return (
     <>
@@ -59,10 +60,10 @@ const Articles = () => {
             alt="Article Image"
           />
 
-          <div className="container max-w-5xl mx-auto -translate-y-52">
+          <div className="container max-w-6xl mx-auto -translate-y-52">
             <div className="mx-0 sm:mx-6">
               <div
-                className="bg-white w-full p-8 md:p-24 text-xl md:text-2xl text-gray-800 leading-normal"
+                className="bg-white w-full p-2 md:p-24 text-xl md:text-2xl text-gray-800 leading-normal shadow-md  shadow-black"
                 style={{ fontFamily: "Georgia, serif" }}
               >
                 <p className="text-2xl md:text-3xl mb-5">{post.description}</p>
@@ -71,7 +72,6 @@ const Articles = () => {
                   dangerouslySetInnerHTML={{ __html: post.body.html }}
                 ></div>
               </div>
-              <div className="flex w-full items-center font-sans p-8 md:p-24"></div>
             </div>
           </div>
         </section>

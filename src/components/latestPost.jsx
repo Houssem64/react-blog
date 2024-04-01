@@ -1,27 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { GraphQLClient, gql } from "graphql-request";
-
-const graphcms = new GraphQLClient(
-  "https://api-eu-central-1-shared-euc1-02.hygraph.com/v2/cluczoi5o0m1007vxfauiuile/master"
-);
-
-const blogDataQuery = gql`
-  {
-    posts(orderBy: date_DESC, first: 1) {
-      body {
-        html
-      }
-      date
-      id
-      image {
-        url
-      }
-      slug
-      title
-      description
-    }
-  }
-`;
+import React, { useEffect, useState } from "react";
+import { fetchLatestPost } from "../graphql/dataFetching";
 
 const LatestPost = ({ title, image, date, description, slug }) => {
   return (
@@ -31,7 +9,7 @@ const LatestPost = ({ title, image, date, description, slug }) => {
 
         <a
           rel="noopener noreferrer"
-          href={`/posts/${slug}`}
+          href={`${slug}`}
           className="block hover:shadow-lg hover:shadow-white hover:translate-x-3 hover:-translate-y-3 transition max-w-sm gap-3 mx-auto sm:max-w-full group hover:no-underline focus:no-underline lg:grid lg:grid-cols-12 bg-black-50"
         >
           <img
@@ -40,7 +18,7 @@ const LatestPost = ({ title, image, date, description, slug }) => {
             className="rounded-xl object-cover w-full h-64  sm:h-96 lg:col-span-7 bg-black-950"
           />
           <div className="p-6  space-y-2 lg:col-span-5">
-            <h3 className="text-2xl font-semibold sm:text-4xl group-hover:underline group-focus:underline">
+            <h3 className="text-2xl font-semibold sm:text-4xl group-hover:no-underline group-focus:no-underline">
               {title}
             </h3>
             <span className="text-xs text-white">{date}</span>
@@ -58,10 +36,10 @@ const LatestPostCard = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const { posts } = await graphcms.request(blogDataQuery);
-        setPost(posts[0]);
+        const latestPost = await fetchLatestPost();
+        setPost(latestPost);
       } catch (error) {
-        console.error("Error fetching latest post:", error);
+        history.push("/404"); // Assuming history is available in your component
       }
     };
 

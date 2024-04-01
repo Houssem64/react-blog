@@ -3,10 +3,18 @@
 @tailwind utilities;
 
 .body-content > h3 {
+  font-size: 30px;
+  padding: 5px;
+  margin: 5px;
+  text-wrap: wrap;
+  line-height: 1;
+}
+.body-content > h2 {
   font-size: 50px;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  text-wrap: nowrap;
+  padding: 5px;
+  margin: 5px;
+  text-wrap: wrap;
+  line-height: 1;
 }
 .body-content > p {
   font-size: large;
