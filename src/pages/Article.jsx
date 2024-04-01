@@ -60,7 +60,7 @@ const Articles = () => {
             alt="Article Image"
           />
 
-          <div className="container max-w-6xl mx-auto -translate-y-52">
+          <div className="container max-w-6xl mx-auto -translate-y-52 -mb-40">
             <div className="mx-0 sm:mx-6">
               <div
                 className="bg-white w-full p-2 md:p-24 text-xl md:text-2xl text-gray-800 leading-normal shadow-md  shadow-black"

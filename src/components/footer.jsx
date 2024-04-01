@@ -3,41 +3,17 @@ import React from "react";
 export default function Footer() {
   return (
     <footer className="bg-gradient-to-r from-[#020213] to-[#091c38]">
-      <div className="mx-auto max-w-screen-xl px-4 pb-8 pt-16 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-md">
-          <strong className="block text-center text-xl font-bold text-white sm:text-3xl">
-            Want us to email you with the latest blockbuster news?
-          </strong>
+      <div className="mx-auto max-w-screen-xl px-4 pb-8 pt-2 sm:px-6 lg:px-8">
+        {/*    <div className="mx-auto max-w-md"></div> */}
 
-          <form className="mt-6">
-            <div className="relative max-w-lg">
-              <label className="sr-only" htmlFor="email">
-                {" "}
-                Email{" "}
-              </label>
-
-              <input
-                className="w-full rounded-full border-gray-200 bg-gray-100 p-4 pe-32 text-sm font-medium"
-                id="email"
-                type="email"
-                placeholder="john@doe.com"
-              />
-
-              <button className="absolute end-1 top-1/2 -translate-y-1/2 rounded-full bg-blue-600 px-5 py-3 text-sm font-medium text-white transition hover:bg-blue-700">
-                Subscribe
-              </button>
-            </div>
-          </form>
-        </div>
-
-        <div className="mt-16 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-32">
+        <div className="mt-2 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-32">
           <div className="mx-auto max-w-sm lg:max-w-none">
-            <p className="mt-4 text-center text-gray-500 lg:text-left lg:text-lg">
+            {/*             <p className="mt-4 text-center text-gray-500 lg:text-left lg:text-lg">
               Lorem ipsum, dolor sit amet consectetur adipisicing elit.
               Praesentium natus quod eveniet aut perferendis distinctio iusto
               repudiandae, provident velit earum?
             </p>
-
+ */}
             <div className="mt-6 flex justify-center gap-4 lg:justify-start">
               <a
                 className="text-gray-700 transition hover:text-white"
