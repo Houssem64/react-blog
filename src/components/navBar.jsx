@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { GraphQLClient } from "graphql-request";
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -69,12 +70,13 @@ export default function NavBar() {
                   <div className="flex space-x-4">
                     <Link
                       to="/"
+                      as={NavLink}
                       className="text-white hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                     >
                       Home
                     </Link>
                     {data.map((item, index) => (
-                      <Link key={index}>
+                      <Link as={NavLink} to={item.navlink} key={index}>
                         <div
                           className={classNames(
                             item.current

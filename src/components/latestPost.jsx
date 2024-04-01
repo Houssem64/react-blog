@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { fetchLatestPost } from "../graphql/dataFetching";
+import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const LatestPost = ({ title, image, date, description, slug }) => {
   return (
@@ -7,9 +9,9 @@ const LatestPost = ({ title, image, date, description, slug }) => {
       <div className="container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12">
         <h1 className="font-extrabold text-4xl ml-10">Latest Post</h1>
 
-        <a
-          rel="noopener noreferrer"
-          href={`${slug}`}
+        <Link
+          as={NavLink}
+          to={`${slug}`}
           className="block hover:shadow-lg hover:shadow-white hover:translate-x-3 hover:-translate-y-3 transition max-w-sm gap-3 mx-auto sm:max-w-full group hover:no-underline focus:no-underline lg:grid lg:grid-cols-12 bg-black-50"
         >
           <img
@@ -24,7 +26,7 @@ const LatestPost = ({ title, image, date, description, slug }) => {
             <span className="text-xs text-white">{date}</span>
             <p>{description}</p>
           </div>
-        </a>
+        </Link>
       </div>
     </section>
   );
@@ -39,7 +41,7 @@ const LatestPostCard = () => {
         const latestPost = await fetchLatestPost();
         setPost(latestPost);
       } catch (error) {
-        history.push("/404"); // Assuming history is available in your component
+        history.push("/404");
       }
     };
 

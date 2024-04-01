@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { fetchAllPosts } from "../graphql/dataFetching";
+import Article from "../pages/Article";
+import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const BlogCardSection = () => {
   const [posts, setPosts] = useState([]);
+  const [selectedBlog, setSelectedBlog] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -22,10 +26,11 @@ const BlogCardSection = () => {
       <div className="container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12">
         <div className="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {posts.map((blog) => (
-            <a
+            <Link
               key={blog.id}
-              rel="noopener noreferrer"
-              href={`${blog.slug}`}
+              as={NavLink}
+              to={`${blog.slug}`}
+              onClick={() => setSelectedBlog(blog)}
               className="hover:shadow-lg hover:shadow-white no-underline hover:translate-x-3 hover:-translate-y-3 transition max-w-sm mx-auto group hover:no-underline focus:no-underline bg-black-950"
             >
               <img
@@ -41,7 +46,7 @@ const BlogCardSection = () => {
                 <span className="text-xs text-black-600">{blog.date}</span>
                 <p>{blog.description}</p>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
         <div className="flex justify-center">
