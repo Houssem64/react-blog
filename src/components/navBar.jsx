@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import { GraphQLClient } from "graphql-request";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import logo from "../../public/logo.png";
+import logo from "/logo.png";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
