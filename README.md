@@ -31,3 +31,49 @@
   
 </p>
 <hr>
+##  Quick Links
+> - [ Overview](#-overview)
+> - [ Features](#-features)
+> - [ Repository Structure](#-repository-structure)
+
+##  Overview
+
+---
+
+##  Features
+
+---
+
+##  Repository Structure
+
+```sh
+└── react-blog/
+    ├── README.md
+    ├── index.html
+    ├── package-lock.json
+    ├── package.json
+    ├── postcss.config.js
+    ├── public
+    │   └── logo.png
+    ├── src
+    │   ├── App.jsx
+    │   ├── components
+    │   │   ├── NoMatch.jsx
+    │   │   ├── blogSection.jsx
+    │   │   ├── footer.jsx
+    │   │   ├── latestPost.jsx
+    │   │   ├── loading.jsx
+    │   │   └── navBar.jsx
+    │   ├── graphql
+    │   │   └── dataFetching.js
+    │   ├── index.css
+    │   ├── main.jsx
+    │   └── pages
+    │       ├── AboutMe.jsx
+    │       ├── Article.jsx
+    │       └── Home.jsx
+    ├── tailwind.config.js
+    └── vite.config.js
+```
+
+---
