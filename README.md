@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://cdn-icons-png.flaticon.com/512/6295/6295417.png" width="100" />
+  <img src="https://i.ibb.co/3vP0hj5/logo.png" alt="logo" height="100px" border="0" />
 </p>
 <p align="center">
     <h1 align="center">Cipher Protocol Blog</h1>
