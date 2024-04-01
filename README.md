@@ -40,6 +40,8 @@
 
 ##  Overview
 
+this blog combines modern technologies like React, Tailwind CSS, and GraphQL with Hygraph CMS for content management. It's fast, responsive, and customizable, providing a seamless blogging experience.
+
 ---
 
 ##  Features
