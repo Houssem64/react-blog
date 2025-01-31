@@ -1,4 +1,4 @@
-import React from "react";
+
 
 export default function AboutMe() {
   return (
@@ -15,16 +15,16 @@ export default function AboutMe() {
             style={{ fontFamily: "Georgia, serif" }}
           >
             <p className="text-2xl md:text-3xl mb-5">
-              Hi, I'm Houssem Mehouachi, a passionate web developer dedicated to
+              Hi, I&aposm Houssem Mehouachi, a passionate web developer dedicated to
               turning digital dreams into reality. Dive into my portfolio and
-              let's collaborate to bring your vision to vibrant life online.I
+              let&aposs collaborate to bring your vision to vibrant life online.I
               have experience working with JavaScript, React, Node.js, and
-              MongoDB. I'm currently learning GraphQL and TypeScript.
+              MongoDB. I&aposm currently learning GraphQL and TypeScript.
             </p>
             <p className="text-2xl md:text-3xl mb-5">
-              I'm a tech enthusiast who loves to learn new things. I'm always
+              I&aposm a tech enthusiast who loves to learn new things. I&aposm always
               looking for opportunities to work on projects that challenge me
-              and help me grow as a developer. I'm open to new opportunities and
+              and help me grow as a developer. I&aposm open to new opportunities and
               collaborations. Feel free to reach out to me if you have any
               questions or would like to work together.
             </p>

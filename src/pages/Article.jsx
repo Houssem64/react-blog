@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import  { useEffect, useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 import { GraphQLClient, gql } from "graphql-request";
 import LoadingAnimation from "../components/loading";
 
@@ -11,6 +11,7 @@ const Articles = () => {
   const { slug } = useParams();
   const [loading, setLoading] = useState(true);
   const [post, setPost] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -43,12 +44,13 @@ const Articles = () => {
         const { post } = await graphcms.request(query, { slug });
         setPost(post);
       } catch (error) {
-        res.error("Error fetching post:", error).status(500);
+        console.error("Error fetching post:", error);
+        navigate("/404");
       }
     };
 
     fetchPost();
-  }, [slug]);
+  }, [slug, navigate]);
   console.log(post);
 
   return (

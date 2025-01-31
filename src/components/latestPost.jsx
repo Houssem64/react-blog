@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import { fetchLatestPost } from "../graphql/dataFetching";
 import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
-
+import PropTypes from 'prop-types';
 const LatestPost = ({ title, image, date, description, slug }) => {
   return (
     <section className="bg-black-950  text-white">
@@ -60,5 +60,11 @@ const LatestPostCard = () => {
     </div>
   ) : null;
 };
-
+LatestPost.propTypes = {
+  title: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  slug: PropTypes.string.isRequired
+};
 export default LatestPostCard;

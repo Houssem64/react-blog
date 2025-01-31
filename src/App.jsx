@@ -1,20 +1,27 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import Home from "./pages/Home";
-import Articles from "./pages/Article";
 import { Analytics } from "@vercel/analytics/react";
 import NavBar from "./components/navBar";
 import Footer from "./components/footer";
-import NoMatch from "./components/NoMatch";
 import LoadingAnimation from "./components/loading";
-import AboutMe from "./pages/AboutMe";
+
+// Lazy load route components
+const Home = React.lazy(() => import("./pages/Home"));
+const Articles = React.lazy(() => import("./pages/Article"));
+const AboutMe = React.lazy(() => import("./pages/AboutMe"));
+const NoMatch = React.lazy(() => import("./components/NoMatch"));
 
 const App = () => {
   const [loading, setLoading] = useState(true);
+  const [contentReady, setContentReady] = useState(false);
 
   useEffect(() => {
     const timeout = setTimeout(() => {
       setLoading(false);
+      // Add small delay before showing content animation
+      setTimeout(() => {
+        setContentReady(true);
+      }, 100);
     }, 2000);
 
     return () => clearTimeout(timeout);
@@ -27,18 +34,20 @@ const App = () => {
       {loading ? (
         <LoadingAnimation />
       ) : (
-        <>
-          <div className="bg-gradient-to-r from-[#020213] to-[#091c38] -mt-2">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/:slug" element={<Articles />} />
-              <Route path="*" element={<NoMatch />} />
-              <Route path="/404" element={<NoMatch />} />
-              <Route path="about" element={<AboutMe />} />
-            </Routes>
+        <Suspense fallback={<LoadingAnimation />}>
+          <div className={`transition-all duration-500 ${contentReady ? 'opacity-100' : 'opacity-0'}`}>
+            <div className="bg-gradient-to-r from-[#020213] to-[#091c38] -mt-2 animate-fade-in-up">
+              <Routes>
+              <Route path="/" element={<Home selectedCategory={selectedCategory} />} />
+                <Route path="/:slug" element={<Articles />} />
+                <Route path="*" element={<NoMatch />} />
+                <Route path="/404" element={<NoMatch />} />
+                <Route path="about" element={<AboutMe />} />
+              </Routes>
+            </div>
+            <Footer className="animate-fade-in-up stagger-delay-3" />
           </div>
-          <Footer />
-        </>
+        </Suspense>
       )}
     </Router>
   );
